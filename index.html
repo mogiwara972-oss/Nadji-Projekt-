@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadji Hadach - Lebenslauf</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        /* حاوية صفحة الترحيب */
+        .welcome-container {
+            max-width: 500px;
+            width: 100%;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .welcome-container p {
+            color: #94a3b8;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
+
+        .btn-lebenslauf {
+            display: inline-block;
+            padding: 18px 45px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #2563eb;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-lebenslauf:active {
+            transform: scale(0.95);
+            background-color: #1d4ed8;
+        }
+
+        /* حاوية السيرة الذاتية (التي تظهر بعد الضغط) */
+        .cv-container {
+            display: none;
+            max-width: 550px;
+            width: 100%;
+            background: #ffffff;
+            color: #333333;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: fadeIn 0.4s ease forwards;
+            text-align: left;
+        }
+
+        /* الهيدر العلوي الرمادي مثل صورتك */
+        .cv-header {
+            background-color: #404040;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .cv-header h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .cv-header p {
+            color: #cccccc;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* محتوى السيرة الذاتية الداخلي */
+        .cv-body {
+            padding: 25px 20px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            color: #1e293b;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-row {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .info-row strong {
+            color: #475569;
+            display: inline-block;
+            width: 130px;
+        }
+
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.4;
+        }
+
+        .bullet-list li::before {
+            content: "●";
+            color: #3b82f6;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .school-date {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الواجهة الأولى: الزر الأزرق الكبير -->
+    <div class="welcome-container" id="welcomeBox">
+        <h1>Willkommen</h1>
+        <p>Nadji Hadach</p>
+        <button onclick="showCV()" class="btn-lebenslauf">Lebenslauf</button>
+    </div>
+
+    <!-- الواجهة الثانية: السيرة الذاتية مكتوبة برمجياً بالكامل ومضمونة العرض 100% -->
+    <div class="cv-container" id="cvBox">
+        <div class="cv-header">
+            <h2>Lebenslauf</h2>
+            <p>Nadji Hadach</p>
+        </div>
+        
+        <div class="cv-body">
+            <!-- قسم البيانات الشخصية -->
+            <div class="section-title">👤 Persönliche Daten</div>
+            <div class="info-row"><strong>NAME:</strong> Nadji Hadach</div>
+            <div class="info-row"><strong>GEBURTSDATUM:</strong> <br>11.10.2007</div>
+            <div class="info-row"><strong>GEBURTSORT:</strong> Blida, Algerien</div>
+            <div class="info-row"><strong>STAATSANGEHÖRIGKEIT:</strong> <br>Algerisch</div>
+            <div class="info-row"><strong>ADRESSE:</strong> Blida, Algerien</div>
+				<div class="info-row"><strong>Fähigkeiten:</strong>Web-Grundkenntnisse</div>
+            <div class="info-row"><strong>KONTAKT:</strong> +213793168929</div>
+        		 <div>     <h4><strong>E-MAIL:</strong></h4>
+<a href="mailto:mogiwara972@gmail.com">mogiwara972@gmail.com </a>
+ 			</div>
+            <!-- قسم التعليم -->
+            <div class="section-title">🏫 Schulbildung</div>
+            <ul class="bullet-list">
+                <li>
+                    <span class="school-date">09/2022 – 06/2026:</span>
+                    Omar Ibn Khattab Gymnasium, Blida<br>
+                    Abschluss: <strong>Abitur</strong>
+                </li>
+            </ul>
+
+            <!-- قسم اللغات -->
+            <div class="section-title">🌐 Sprachkenntnisse</div>
+            <ul class="bullet-list">
+                <li><strong>Arabisch:</strong> Muttersprache</li>
+                <li><strong>Deutsch:</strong> Gute Kenntnisse</li>
+
+<li><strong>Deutsch technik:</strong> Gute kenntnisse<li>
+               <li><strong>Französisch:</strong> Grundkenntnisse</li>
+                <li><strong>Englisch:</strong> Grundkenntnisse</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function showCV() {
+            document.getElementById('welcomeBox').style.display = 'none';
+            document.getElementById('cvBox').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
